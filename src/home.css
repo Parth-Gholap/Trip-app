@@ -1,0 +1,134 @@
+/* Slideshow Container */
+.slideshow-container {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 700px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    perspective: 1200px; /* Depth Effect */
+}
+
+/* 3D Slides */
+.slides {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+/* Individual Slide */
+.slide {
+    position: absolute;
+    width: 60%;
+    opacity: 0;
+    transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out, filter 0.5s ease-in-out;
+}
+
+/* Center (Active) Image */
+.active {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    z-index: 2;
+    filter: blur(0px); /* Clear Image */
+    border: 2px solid #fff;
+    box-shadow: 0 0 2px #fff;
+    border-radius: 10px;
+}
+
+/* Left (Previous) Image */
+.prev {
+    transform: translateX(-50%) scale(0.9);
+    opacity: 0.8;
+    z-index: 1;
+    filter: blur(2px); /* Blurred */
+}
+
+/* Right (Next) Image */
+.next {
+    transform: translateX(50%) scale(0.9);
+    opacity: 0.8;
+    z-index: 1;
+    filter: blur(2px); /* Blurred */
+}
+
+/* Image Styling */
+.slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Container - Positioned in Lower Half */
+.button-container {
+    position: absolute;
+    bottom: 10%;  /* Ensures buttons are in the lower half of the screen */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 10;
+}
+
+/* Styled Button (Same as Login Button) */
+.custom-button {
+    background-color: rgb(120, 80, 10); /* Same as login button */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    
+}
+
+.custom-button:hover {
+    background-color: white;
+    color: rgb(120, 80, 10);
+    transform: scale(1.05);
+    box-shadow:0 0 10px rgb(120, 80, 10) ;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slideshow-container {
+        width: 95%;
+        max-width: 500px;
+        top: 8%;
+    }
+    .button-container {
+        bottom: 8%; /* Adjusted for smaller screens */
+        flex-direction: column;
+        gap: 10px;
+    }
+    .custom-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slideshow-container {
+        width: 100%;
+        max-width: 350px;
+        top: 10%;
+    }
+    .button-container {
+        bottom: 5%; /* Adjusted for mobile screens */
+    }
+    .custom-button {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
