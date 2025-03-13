@@ -34,6 +34,11 @@ const Home = () => {
         return () => clearInterval(interval);
     }, [currentIndex]);
 
+    // Function to open Google Drive link
+    const openDrive = () => {
+        window.location.href="https://drive.google.com/drive/folders/17Gw-3AjOVSjPvzst0PvoNj94zAoJVVy0?usp=drive_link";
+    }
+
     return (
         <div className="home-container">
             <div className="background-container"></div>
@@ -65,7 +70,7 @@ const Home = () => {
             {/* Buttons */}
             <div className="button-container">
                 <button className="custom-button">View Payment</button>
-                <button className="custom-button">Photo Gallery</button>
+                <button className="custom-button" onClick={openDrive}>Photo Gallery</button>
             </div>
         </div>
     );
