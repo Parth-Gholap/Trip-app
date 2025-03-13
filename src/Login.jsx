@@ -36,10 +36,10 @@ const Login = () => {
             if (response.ok && data.success) {
                 navigate("/home"); // Redirect normal users to home page
             } else {
-                setError("*Incorrect username or password");
+                setError("*Incorrect Username or Password");
             }
         } catch (error) {
-            setError("*Incorrect username or password");
+            setError("*Incorrect Username or Password");
         }
     };
 
