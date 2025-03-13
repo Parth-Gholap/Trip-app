@@ -20,6 +20,11 @@ const Login = () => {
 
         // Special case for Parth Gholap
         if (username.toLowerCase() === "parth gholap" && password === "1911") {
+            navigate("/PartHome"); // Redirect to a special home page for Parth
+            return;
+        }
+
+        if (username.toLowerCase() === "ayush karan" && password === "2005") {
             navigate("/home"); // Redirect to a special home page for Parth
             return;
         }
