@@ -48,6 +48,13 @@ const Login = () => {
         }
     };
 
+    // Handle Enter Key Press
+    const handleKeyPress = (event) => {
+        if (event.key === "Enter") {
+            handleLogin();
+        }
+    };
+
     return (
         <div className="container">
             <h1>Login</h1>
@@ -60,6 +67,7 @@ const Login = () => {
                         id="username"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
+                        onKeyDown={handleKeyPress} // Listen for Enter key
                         placeholder=" "
                         required
                     />
@@ -72,6 +80,7 @@ const Login = () => {
                         id="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        onKeyDown={handleKeyPress} // Listen for Enter key
                         placeholder=" "
                         required
                     />
