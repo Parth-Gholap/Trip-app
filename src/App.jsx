@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import Login from "./login";
+import Login from "./Login";
 import Home from "./home";
 import Parth from "./PartHome"
+import Payment from "./payment";
 
 function App() {
     return (
@@ -17,6 +18,8 @@ function App() {
 
                 {/* Redirect unknown routes to login */}
                 <Route path="*" element={<Navigate to="/login" />} />
+
+                <Route path="/payment" element={<Payment />} />
 
 
             </Routes>
