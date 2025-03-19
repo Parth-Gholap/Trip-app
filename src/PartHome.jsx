@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css"; // Import Home.css for consistent styling
+import { useNavigate } from "react-router-dom";
 
 const ParthHome = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const navigate = useNavigate();
     const slides = [
         "./img1.webp",
         "./img2.webp",
@@ -71,7 +73,7 @@ const ParthHome = () => {
             <div className="button-container">
                 <button className="custom-button">View Payment</button>
                 <button className="custom-button" onClick={openDrive}>Photo Gallery</button>
-                <button className="custom-button">Add Payment</button>
+                <button className="custom-button" onClick={() => navigate("/payment")}>Add Payment</button>
             </div>
         </div>
     );
