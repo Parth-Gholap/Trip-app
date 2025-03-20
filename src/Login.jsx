@@ -24,7 +24,7 @@ const Login = () => {
             return;
         }
 
-        if (username.toLowerCase() === "ayush karan" && password === "2005") {
+        if (username.toLowerCase() === "ayush karan" && password === "2004") {
             navigate("/home"); // Redirect to a special home page for Parth
             return;
         }
