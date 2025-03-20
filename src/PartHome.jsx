@@ -81,7 +81,6 @@ const ParthHome = () => {
                 <button className="custom-button" onClick={() => navigate("/Settlement")}>Settlement</button>
                 <button className="custom-button" onClick={() => navigate("/PaymentHistory")}>Payment History</button>
                 <button className="custom-button" onClick={openDrive}>Photo Gallery</button>
-                
             </div>
         </div>
     );

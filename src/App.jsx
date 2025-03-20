@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./Login";
 import Home from "./home";
-import Parth from "./PartHome"
+import Parth from "./PartHome";
 import Payment from "./payment";
 import Settlement from "./Settlement";
 import History from "./PaymentHistory"
@@ -15,12 +15,13 @@ function App() {
                 
                 {/* Protected Routes */}
                 <Route path="/home" element={<Home />} />
-
                 <Route path="/PartHome" element={<Parth />} />
+                <Route path="/payment" element={<Payment />} />
+                <Route path="/payment-history" element={<PaymentHistory />} /> {/* Added route */}
 
                 {/* Redirect unknown routes to login */}
                 <Route path="*" element={<Navigate to="/login" />} />
-
+                
                 <Route path="/payment" element={<Payment />} />
 
                 <Route path="/Settlement" element={<Settlement />} />
