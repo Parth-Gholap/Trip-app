@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Payment Form Container */
 
 
@@ -134,3 +135,141 @@ body {
         padding: 10px;
     }
 }
+=======
+/* Payment Form Container */
+
+
+.payment-container {
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Input Group */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.input-group select,
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    background: rgba(3, 0, 0, 0.625);
+    outline: none;
+}
+
+/* Custom Reason Field */
+.input-group input[type="text"] {
+    margin-top: 10px;
+}
+
+/* Buttons */
+.submit-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+.submit-btn::after {
+    content: "✔";
+    font-size: 18px;
+    color: white;
+    position: absolute;
+    right: -30px; /* Initially outside the button */
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.submit-btn:hover::after {
+    right: 30%; /* Moves inside the button */
+    opacity: 1;
+}
+
+.back-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #c82333;
+}
+.back-btn::after {
+    content: "✖";
+    font-size: 16px;
+    color: white;
+    position: absolute;
+    right: -30px; /* Initially outside the button */
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.back-btn:hover::after {
+    right: 38%; /* Moves inside the button */
+    opacity: 1;
+}
+
+/* Background Styling */
+body {
+    background-image: url('/path-to-your-background.jpg'); /* Set the background image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .payment-container {
+        width: 95%;
+        max-width: 350px;
+    }
+
+    .submit-btn, .back-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+>>>>>>> e71ea1ea1ce80de6fe4ddd5aa7b9c1cbe0eef9b0
