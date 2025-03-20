@@ -38,9 +38,9 @@
     opacity: 1;
     z-index: 2;
     filter: blur(0px); /* Clear Image */
-    border: 2px solid #fff;
+    border: 3px solid #000000;
     box-shadow: 0 0 2px #fff;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 /* Left (Previous) Image */

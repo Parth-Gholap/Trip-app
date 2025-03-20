@@ -7,7 +7,13 @@ const Home = () => {
         "./img1.webp",
         "./img2.webp",
         "./img3.webp",
-        "./img4.webp"
+        "./img4.webp",
+        "./img5.jpg",
+        "./img6.jpg",
+        "./img7.jpg",
+        "./img8.jpg",
+        "./img9.jpg",
+        "./img10.jpg"
     ];
 
     // Function to update slides correctly
