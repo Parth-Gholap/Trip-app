@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Home.css"; // Import Home.css for consistent styling
+import "./home.css"; // Import Home.css for consistent styling
 import { useNavigate } from "react-router-dom";
 
 const ParthHome = () => {
