@@ -2,7 +2,7 @@
 html, body {
     height: 100%;
     margin: 0;
-    background: url(./bg.png) repeat center center scroll;
+    background: url(/bg.png) repeat center center scroll;
     background-size: cover;
     display: flex;
     align-items: center;
