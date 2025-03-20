@@ -50,4 +50,4 @@ const PaymentHistory = () => {
   );
 };
 
-export default PaymentHisto
+export default PaymentHistory;

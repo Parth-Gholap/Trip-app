@@ -4,7 +4,7 @@ import Home from "./home";
 import Parth from "./PartHome";
 import Payment from "./payment";
 import Settlement from "./Settlement";
-import History from "./PaymentHistory"
+import History from "./PaymentHistory";
 
 function App() {
     return (
@@ -16,12 +16,10 @@ function App() {
                 {/* Protected Routes */}
                 <Route path="/home" element={<Home />} />
                 <Route path="/PartHome" element={<Parth />} />
-                <Route path="/payment" element={<Payment />} />
-                <Route path="/payment-history" element={<PaymentHistory />} /> {/* Added route */}
 
                 {/* Redirect unknown routes to login */}
                 <Route path="*" element={<Navigate to="/login" />} />
-                
+
                 <Route path="/payment" element={<Payment />} />
 
                 <Route path="/Settlement" element={<Settlement />} />

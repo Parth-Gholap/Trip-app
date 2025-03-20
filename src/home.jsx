@@ -79,8 +79,8 @@ const Home = () => {
             {/* Buttons */}
             <div className="button-container">
 
-                <button className="custom-button">Settlement</button>
-                <button className="custom-button" onClick={() => navigate("/payment-history")}>Payment History</button>
+                <button className="custom-button" onClick={() => navigate("/Settlement")}>Settlement</button>
+                <button className="custom-button" onClick={() => navigate("/PaymentHistory")}>Payment History</button>
                 <button className="custom-button" onClick={openDrive}>Photo Gallery</button>
             </div>
         </div>
