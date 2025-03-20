@@ -1,0 +1,124 @@
+/* Center the Payment History Page */
+.payment-history-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto; /* Adaptive height */
+    background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+    backdrop-filter: blur(6px); /* Blur effect */
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+
+    width: 80vw; /* Flexible width */
+    max-width: 600px;
+    min-width: 500px;
+    text-align: center;
+    margin: auto;
+}
+
+/* Title Styling */
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Payment History List */
+.history-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Each Transaction */
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 18px;
+    width: 100%;
+}
+
+/* Styling for Amount */
+.amount {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+/* Styling for Date */
+.date {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Styling for Reason */
+.reason {
+    font-style: italic;
+    color: #ff8c00;
+}
+
+/* No History Message */
+.no-history {
+    font-size: 16px;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+/* Back Button */
+.back-button {
+    margin-top: 15px;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+.back-button:hover {
+    background-color: #c82333;
+}
+
+/* 📱 Mobile & Small Screens */
+@media (max-width: 768px) {
+    .payment-history-container {
+        width: 90vw;
+        max-width: 500px;
+        min-width: 400px;
+        height: auto;
+    }
+
+    .history-item {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+/* 📱 Extra Small Screens */
+@media (max-width: 480px) {
+    .payment-history-container {
+        width: 95vw;
+        max-width: 400px;
+        min-width: 300px;
+        height: auto;
+    }
+
+    .history-item {
+        font-size: 15px;
+        padding: 8px;
+    }
+
+    .back-button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

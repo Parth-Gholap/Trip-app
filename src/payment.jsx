@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // React Router for navigation
-import "./payment.css"; // Ensure this CSS file is correctly linked
+import { useNavigate } from "react-router-dom";
+import "./payment.css";
 
 const Payment = () => {
     const [name, setName] = useState("");
@@ -10,9 +10,10 @@ const Payment = () => {
     const [errors, setErrors] = useState({});
     const [involved, setInvolved] = useState([]);
     const [selectAll, setSelectAll] = useState(false);
+    const [payments, setPayments] = useState([]); // Placeholder storage
     const navigate = useNavigate();
 
-    const names = ["Parth", "Ayush", "Pratik", "Om", "Sparsh"];
+    const names = ["Parth", "Ayush", "Pratik", "Om", "Sparsh", "Abhinav"];
     const reasons = ["Food", "Travel", "Other"];
 
     const handleCheckboxChange = (e) => {
@@ -25,7 +26,7 @@ const Payment = () => {
     const handleSelectAll = (e) => {
         const checked = e.target.checked;
         setSelectAll(checked);
-        setInvolved(checked ? [...names, "Abhinav"] : []);
+        setInvolved(checked ? [...names] : []);
     };
 
     const handleSubmit = (e) => {
@@ -48,7 +49,19 @@ const Payment = () => {
 
         setErrors({});
         const finalReason = reason === "Other" ? customReason : reason;
-        console.log("Payment Added:", { name, amount, reason: finalReason, involved });
+        const paymentData = {
+            name,
+            amount,
+            reason: finalReason,
+            involved,
+            date: new Date().toISOString().split("T")[0], // Auto-add today's date
+        };
+
+        // Save to local state instead of backend
+        setPayments([...payments, paymentData]);
+        console.log("Payment Added:", paymentData);
+        alert("Payment added successfully!");
+        navigate("/PartHome");
     };
 
     return (
@@ -59,7 +72,7 @@ const Payment = () => {
                     <label>Name:</label>
                     <select value={name} onChange={(e) => setName(e.target.value)}>
                         <option value="" disabled>Select Name</option>
-                        {[...names, "Abhinav"].map((n) => (
+                        {names.map((n) => (
                             <option key={n} value={n}>{n}</option>
                         ))}
                     </select>
@@ -114,15 +127,6 @@ const Payment = () => {
                         <div className="checkbox-item" style={{ display: "flex", alignItems: "center", gap: "5px" }}>
                             <input 
                                 type="checkbox" 
-                                value="Abhinav" 
-                                onChange={handleCheckboxChange} 
-                                checked={involved.includes("Abhinav")}
-                            />
-                            <span>Abhinav</span>
-                        </div>
-                        <div className="checkbox-item" style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-                            <input 
-                                type="checkbox" 
                                 onChange={handleSelectAll} 
                                 checked={selectAll}
                             />
@@ -135,7 +139,22 @@ const Payment = () => {
                 <button type="submit" className="submit-btn"> Add Payment</button>
                 <button type="button" className="back-btn" onClick={() => navigate("/PartHome")}> Back</button>
             </form>
+
+            {/* Display Payments (For Testing) */}
+            {payments.length > 0 && (
+                <div className="payment-history">
+                    <h3>Recent Payments</h3>
+                    <ul>
+                        {payments.map((payment, index) => (
+                            <li key={index}>
+                                <strong>{payment.name}</strong> paid <span style={{ color: "#ffcc00" }}>₹{payment.amount}</span> for {payment.reason} on {payment.date}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
         </div>
     );
 };
+
 export default Payment;
