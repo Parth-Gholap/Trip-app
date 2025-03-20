@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
 const Home = () => {
+    const navigate = useNavigate();
     const [currentIndex, setCurrentIndex] = useState(0);
     const slides = [
         "./img1.webp",
@@ -76,7 +78,7 @@ const Home = () => {
             {/* Buttons */}
             <div className="button-container">
                 <button className="custom-button">Settlement</button>
-                <button className="custom-button">Payment History</button>
+                <button className="custom-button" onClick={() => navigate("/payment-history")}>Payment History</button>
                 <button className="custom-button" onClick={openDrive}>Photo Gallery</button>
             </div>
         </div>
