@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // React Router for navigation
-import "./login.css"; // Ensure error styling is included
+import "./Login.css"; // Ensure error styling is included
 
 const Login = () => {
     const [username, setUsername] = useState("");
