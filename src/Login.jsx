@@ -19,7 +19,7 @@ const Login = () => {
         setError(""); // Clear previous errors
 
         // Special case for Parth Gholap
-        if (username.toLowerCase() === "parth gholap" && password === "1911") {
+        if (username.toLowerCase() === "parth gholap" && password === "1912") {
             navigate("/PartHome"); // Redirect to a special home page for Parth
             return;
         }
